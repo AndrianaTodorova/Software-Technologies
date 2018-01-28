@@ -1,0 +1,21 @@
+Data.cs:
+ public class Task
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Title { get; set; }
+
+        [Required]
+        public string Comments { get; set; }
+    }
+	
+DbContext.cs:
+   public class TodoListDbContext : DbContext
+    {
+        public virtual IDbSet<Task> Tasks { get; set; }
+
+        public TodoListDbContext() : base("TodoListDb")
+        {
+        }
+    }	
